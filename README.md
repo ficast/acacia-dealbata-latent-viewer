@@ -2,9 +2,9 @@
 
 Ferramenta de visual analytics da dissertação *Interpretable Latent Space Analysis for Forest Species using Satellite Images* (MIACD, Universidade de Coimbra).
 
-Mostra como a *Acacia dealbata* e as classes de floresta e matos da COSc 2023 (eucalipto, outras folhosas, pinheiro-bravo, matos) se organizam nos espaços latentes de três *foundation models* de píxel (GeoTessera, AlphaEarth, Presto), no tile Sentinel-2 29TNE. As classes vêm de uma superfície COS + acácia: o mapa de acácia de 2023 feito na dissertação posto por cima das quatro classes da COS. É uma cópia de [cosc-latent-viewer](https://github.com/ficast/cosc-latent-viewer), que mostra só as classes da COS.
+Mostra como a *Acacia dealbata* e as classes de floresta e matos da COSc 2023 (eucalipto, outras folhosas, pinheiro-bravo, matos) se organizam nos espaços latentes de seis *foundation models* de píxel (GeoTessera, AlphaEarth, Presto, OlmoEarth, Tessera v2, Galileo), no tile Sentinel-2 29TNE. As classes vêm de uma superfície COS + acácia: o mapa de acácia de 2023 feito na dissertação posto por cima das quatro classes da COS. É uma cópia de [cosc-latent-viewer](https://github.com/ficast/cosc-latent-viewer), que mostra só as classes da COS.
 
-A acácia é uma amostra de toda a acácia do mapa (sem filtro de pureza); as classes da COS são píxeis puros. A página tem:
+Cada classe tem 2 000 píxeis puros (janela 3 × 3 da mesma classe) e 2 000 de borda, com um controlo para ver uns, outros ou todos. A página tem:
 
 - projeções UMAP e t-SNE ligadas a um mapa com o OrtoSat 2023 da DGT e o Sentinel-2 cloudless 2023 da EOX;
 - pureza e confusão dos vizinhos mais próximos, calculadas no espaço original de cada modelo.
@@ -16,7 +16,7 @@ Site estático, sem build:
 | Ficheiro | Conteúdo |
 |---|---|
 | `index.html`, `style.css`, `app.js` | A página (Leaflet 1.9.4 via unpkg) |
-| `data.json` | Píxeis, projeções e métricas, gerado pelo notebook 49 do workspace da tese (`project/notebooks/experimentos_7/49_acacia_pixel_latent.ipynb`, exportado para `project/data/interim/acacia_final/latent/data.json`) |
+| `data.json` | Píxeis, projeções e métricas, gerado pelo notebook 53 do workspace da tese (`project/notebooks/experimentos_8/53_six_models_app.ipynb`, exportado para `project/data/interim/acacia_final/latent/data_six_models.json`), a partir da amostra do notebook 49 |
 
 ## Correr localmente
 
